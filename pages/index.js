@@ -9,7 +9,7 @@ import Trending from "../components/Trending";
 import CoinGecko from "coingecko-api";
 import NewsLetter from "../components/coin";
 import Footer from "../components/footer";
-// const coinGeckoClient = new CoinGecko();
+const coinGeckoClient = new CoinGecko();
 const HomePage = () => {
   const { data } = props.result;
   let trending = data.filter((single) => parseInt(single.current_price) > 590);
