@@ -6,7 +6,7 @@ import pic4 from "../static/Images/pic4.png";
 import pic5 from "../static/Images/pic5.png";
 import pic6 from "../static/Images/pic6.png";
 import Image from "next/image";
-
+import AiOutlineArrowRight from "react-icons/ai";
 const image = [
   {
     title: "Token airDrop",
@@ -57,7 +57,7 @@ const CardSlide = () => {
           }
         }}>
         {" "}
-        <span>&gt</span>{" "}
+        <span>{AiOutlineArrowRight}</span>{" "}
       </div>
       <div
         style={{
