@@ -10,9 +10,9 @@ import Trending from "../components/Trending";
 import NewsLetter from "../components/coin";
 import Footer from "../components/footer";
 
-const coinGecko = require("coingecko-api");
+const CoinGecko = require("coingecko-api");
 const coinGeckoClient = new CoinGecko();
-const HomePage = () => {
+const HomePage = (props) => {
   const { data } = props.result;
   let trending = data.filter((single) => parseInt(single.current_price) > 590);
   let biggestGainers = data.filter(
@@ -46,6 +46,11 @@ export async function getServerSideProps(context) {
   };
 
   const result = await coinGeckoClient.coins.markets({ params });
+  if (!result) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {

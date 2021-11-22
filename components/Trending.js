@@ -86,7 +86,7 @@ const Trending = ({ trending, recents, gainer }) => {
                         return (
                           <li key={index}>
                             <div className="content2">
-                              <Image
+                              <img
                                 src={image}
                                 style={{
                                   width: 25,
