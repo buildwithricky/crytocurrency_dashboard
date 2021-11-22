@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap");
+.nav-container {
+  display: flex;
+  padding: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: "";
+  background-color: #fff;
+  border-bottom: 0.5px solid #eef;
+  margin-bottom: 40px;
+}
+
+.nav-header {
+}
+.nav-header .logo {
+  margin-left: 25px;
+  font-size: 1.2rem;
+  font-family: "opensans", sans-serif;
+  font-weight: 800;
+}
+
+.bars {
+  cursor: pointer;
+  display: none;
+}
+.nav-desk {
+  align-self: center;
+}
+
+.nav-desk nav ul {
+  list-style: none;
+  display: block;
+  display: flex;
+}
+.nav-desk nav ul li {
+  height: 30px;
+}
+.nav-desk nav ul li ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 13px;
+  margin-left: 18px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+  background-color: #fff;
+  opacity: 0;
+  z-index: 4;
+
+  transition: opacity 0.4s;
+}
+.nav-desk nav ul li ul li {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+}
+.nav-desk nav ul li ul li a {
+  padding: 0px 15px;
+}
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #cdcdcd;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+.nav-desk nav ul li ul li:hover {
+  background-color: rgba(154, 194, 231, 0.4);
+  border-radius: 3px;
+}
+.nav-desk nav ul li ul:after {
+  position: absolute;
+  left: 2%;
+  top: -10px;
+  width: 0;
+
+  height: 0;
+  content: "";
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #ffffff;
+}
+.nav-desk nav ul li:hover ul {
+  display: block;
+  opacity: 1;
+}
+
+.nav-desk nav ul li a {
+  color: #000;
+  font-size: 1.5rem;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  font-weight: 400;
+
+  font-size: 1.1rem;
+  padding: 5px 5px;
+  border: 1px solid transparent;
+  margin: 4px 10px;
+
+  transition: 0.3s;
+}
+.nav-desk nav ul li a:hover {
+  color: rgb(60, 140, 214);
+}
+
+.nav-mobile {
+  display: none;
+}
+/* .sub-list ul {
+  height: 300px;
+  width: 200px;
+  display: none;
+  visibility: 0;
+  border: 1px solid red;
+  position: absolute;
+}
+.sub-list li {
+  background-color: #fff;
+  border: 1px solid red;
+  visibility: 0;
+  display: none;
+} */
+
+/* for mobile devices */
+
+@media screen and (max-width: 1160px) {
+  body,
+  html {
+    overflow-x: hidden;
+  }
+  .nav-container {
+    justify-content: center;
+    overflow-x: hidden;
+  }
+  .bars {
+    display: block;
+    overflow-x: hidden;
+    align-self: center;
+  }
+  .top {
+    align-self: start;
+    position: absolute;
+    overflow-x: hidden;
+    right: 0;
+    padding: 15px;
+    font-size: 40px;
+    color: rgb(111, 111, 228);
+    z-index: 4;
+    cursor: pointer;
+    font-family: sans-serif;
+  }
+  .nav-header .logo {
+    margin-right: auto;
+    margin-top: 1.3rem;
+  }
+  .nav-header {
+    display: flex;
+    padding: 10px;
+    overflow-x: hidden;
+
+    width: 90%;
+    justify-self: center;
+    align-self: center;
+  }
+  .nav-desk nav ul {
+    display: none;
+  }
+
+  .nav-mobile nav ul li a {
+    color: rgb(0, 0, 0);
+  }
+  .nav-mobile nav ul li ul {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    display: block;
+  }
+
+  .show-list {
+    height: 300px;
+  }
+  .nav-mobile {
+    position: fixed;
+    display: flex;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    visibility: hidden;
+    right: 0;
+    width: 0px;
+    top: 0;
+    z-index: 8;
+    overflow-x: hidden;
+    transition: 0.3s;
+  }
+  .show {
+    visibility: visible;
+    width: 100%;
+    z-index: 8;
+  }
+  .nav-mobile ul {
+    padding: 2rem;
+
+    list-style: none;
+  }
+  .nav-mobile ul li {
+    padding: 10px 15px;
+  }
+  .nav-mobile ul li a {
+    color: #fff;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .nav-mobile ul li a:hover {
+    cursor: pointer;
+    color: rgb(51, 48, 48);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .show {
+    visibility: visible;
+    width: 100%;
+  }
+}
