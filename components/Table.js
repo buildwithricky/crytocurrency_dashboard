@@ -30,11 +30,11 @@ const Table = ({ props }) => {
               <tr key={coin.id}>
                 <td> {index + 1}</td>
                 <td className="p">
-                  <img
+                  {/* <img
                     src={coin.image}
                     style={{ width: 25, height: 25, marginRight: 10 }}
                     alt="image"
-                  />
+                  /> */}
                   {coin.name}
                   {coin.symbol.toUpperCase()}
                 </td>

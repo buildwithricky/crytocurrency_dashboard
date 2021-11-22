@@ -46,11 +46,6 @@ export async function getServerSideProps(context) {
   };
 
   const result = await coinGeckoClient.coins.markets({ params });
-  if (!result) {
-    return {
-      notFound: true,
-    };
-  }
 
   return {
     props: {

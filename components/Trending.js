@@ -69,7 +69,7 @@ const Trending = ({ trending, recents, gainer }) => {
               <div className="card-trn">
                 <div className="card-body">
                   <h2 className="card-title">
-                    <img src={src} height="25" width="25" />
+                    {/* <img src={src} height="25" width="25" /> */}
                     {name}
                     <span>more</span>
                   </h2>
@@ -86,14 +86,14 @@ const Trending = ({ trending, recents, gainer }) => {
                         return (
                           <li key={index}>
                             <div className="content2">
-                              <img
+                              {/* <img
                                 src={image}
                                 style={{
                                   width: 25,
                                   height: 25,
                                   marginRight: 10,
                                 }}
-                              />
+                              /> */}
                               <h4> {name} </h4>
                               <p>{symbol}</p>
                               <span
