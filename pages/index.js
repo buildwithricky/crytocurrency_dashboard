@@ -5,32 +5,32 @@ import Header from "../components/header";
 import { Fragment } from "react";
 import NavBar from "../components/Navbar";
 import CardSlide from "../components/CardSlide";
-// import Trending from "../components/Trending";
-// import CoinGecko from "coingecko-api";
+import Trending from "../components/Trending";
+import CoinGecko from "coingecko-api";
 import NewsLetter from "../components/coin";
 import Footer from "../components/footer";
 // const coinGeckoClient = new CoinGecko();
 const HomePage = () => {
-  // const { data } = props.result;
-  // let trending = data.filter((single) => parseInt(single.current_price) > 590);
-  // let biggestGainers = data.filter(
-  //   (single) => parseInt(single.price_change_percentage_24h) > 0
-  // );
-  // let recentlyAdded = data.filter(
-  //   (single) => parseInt(single.current_price) < 1
-  // );
+  const { data } = props.result;
+  let trending = data.filter((single) => parseInt(single.current_price) > 590);
+  let biggestGainers = data.filter(
+    (single) => parseInt(single.price_change_percentage_24h) > 0
+  );
+  let recentlyAdded = data.filter(
+    (single) => parseInt(single.current_price) < 1
+  );
 
   return (
     <div className="home">
-      {/* <Header props={props} /> */}
+      <Header props={props} />
       <NavBar />
       <CardSlide />
-      {/* <Trending
+      <Trending
         trending={trending}
         recents={recentlyAdded}
         gainer={biggestGainers}
       />
-      <Table props={props} /> */}
+      <Table props={props} />
       <NewsLetter />
       <Footer />
     </div>
@@ -38,16 +38,16 @@ const HomePage = () => {
 };
 
 export default HomePage;
-// export async function getServerSideProps(context) {
-//   const params = {
-//     order: CoinGecko.ORDER.MARKET_CAP_DESC,
-//   };
+export async function getServerSideProps(context) {
+  const params = {
+    order: CoinGecko.ORDER.MARKET_CAP_DESC,
+  };
 
-//   const result = await coinGeckoClient.coins.markets({ params });
+  const result = await coinGeckoClient.coins.markets({ params });
 
-//   return {
-//     props: {
-//       result,
-//     },
-//   };
-// }
+  return {
+    props: {
+      result,
+    },
+  };
+}
