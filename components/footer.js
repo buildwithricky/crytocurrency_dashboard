@@ -5,10 +5,8 @@ const Footer = () => {
     <div className="container-fluid p-5 mt-5 footer">
       <div className="row">
         <div className="col-md-6 content-news">
-          <h3> CoinListing</h3>
-          <p className="text-secondary">
-            © 2021 CoinListing. All rights reserved
-          </p>
+          <h3> Binance</h3>
+          <p className="text-secondary">© 2021 Binance. All rights reserved</p>
         </div>
         <div className="links col-md-6 row">
           <div className="col-md-3">
