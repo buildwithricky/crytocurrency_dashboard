@@ -6,9 +6,11 @@ import { Fragment } from "react";
 import NavBar from "../components/Navbar";
 import CardSlide from "../components/CardSlide";
 import Trending from "../components/Trending";
-import CoinGecko from "coingecko-api";
+
 import NewsLetter from "../components/coin";
 import Footer from "../components/footer";
+
+const coinGecko = require("coingecko-api");
 const coinGeckoClient = new CoinGecko();
 const HomePage = () => {
   const { data } = props.result;
